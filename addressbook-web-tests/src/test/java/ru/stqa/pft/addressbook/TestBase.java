@@ -73,6 +73,29 @@ public class TestBase {
         driver.findElement(By.name("selected[]")).click();
     }
 
+    protected void submitContactCreation() {
+        driver.findElement(By.name("submit")).click();
+    }
+
+    protected void fillContactForm(ContactData contactData) {
+        driver.findElement(By.name("firstname")).click();
+        driver.findElement(By.name("firstname")).clear();
+        driver.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+        driver.findElement(By.name("lastname")).click();
+        driver.findElement(By.name("lastname")).clear();
+        driver.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+        driver.findElement(By.name("mobile")).click();
+        driver.findElement(By.name("mobile")).clear();
+        driver.findElement(By.name("mobile")).sendKeys(contactData.getPhone());
+        driver.findElement(By.name("email")).click();
+        driver.findElement(By.name("email")).clear();
+        driver.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    }
+
+    protected void initContactCreation() {
+        driver.findElement(By.linkText("add new")).click();
+    }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
       driver.quit();

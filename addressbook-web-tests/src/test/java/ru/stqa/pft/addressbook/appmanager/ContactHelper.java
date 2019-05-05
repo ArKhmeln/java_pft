@@ -24,4 +24,16 @@ public class ContactHelper extends HelperBase {
     public void initContactCreation() {
         click(By.linkText("add new"));
     }
+
+    public void selectContact() {
+        click(By.id("4"));
+    }
+
+    public void deleteSelectedContacts() {
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Select all'])[1]/following::input[2]"));
+    }
+
+    public void confirmDeletionContacts() {
+        closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$");
+    }
 }

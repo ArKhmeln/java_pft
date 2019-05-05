@@ -1,0 +1,14 @@
+package ru.stqa.pft.addressbook.tests;
+
+import org.testng.annotations.Test;
+import ru.stqa.pft.addressbook.model.ContactData;
+
+public class ContactCreationTests extends TestBase {
+
+  @Test
+  public void testGroupCreation() throws Exception {
+    app.initContactCreation();
+    app.fillContactForm(new ContactData("Tester", "Auto", "1234", "mail@test.com"));
+    app.submitContactCreation();
+  }
+}

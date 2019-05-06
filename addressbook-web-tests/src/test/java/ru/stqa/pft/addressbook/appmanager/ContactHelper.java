@@ -26,7 +26,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        click(By.id("4"));
+        click(By.id("0"));
     }
 
     public void deleteSelectedContacts() {
@@ -35,5 +35,13 @@ public class ContactHelper extends HelperBase {
 
     public void confirmDeletionContacts() {
         closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$");
+    }
+
+    public void initContactModification() {
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='asf'])[1]/following::img[2]"));
+    }
+
+    public void submitContactModification() {
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]"));
     }
 }

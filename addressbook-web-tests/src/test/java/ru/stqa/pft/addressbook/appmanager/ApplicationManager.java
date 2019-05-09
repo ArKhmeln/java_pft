@@ -1,13 +1,17 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
+
     WebDriver driver;
     private ContactHelper contactHelper;
     private SessionHelper sessionHelper;
@@ -15,10 +19,23 @@ public class ApplicationManager {
     private GroupHelper groupHelper;
     StringBuffer verificationErrors = new StringBuffer();
     String baseUrl;
+    private String browser;
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void init() {
-        System.setProperty("webdriver.gecko.driver","C:\\Selenium\\Firefoxdriver\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        if (browser == BrowserType.FIREFOX) {
+            System.setProperty("webdriver.gecko.driver","D:\\JavaTest\\Selenium\\WebDrivers\\geckodriver.exe");
+            driver = new FirefoxDriver();
+        } else if (browser == BrowserType.CHROME) {
+            System.setProperty("webdriver.chrome.driver","D:\\JavaTest\\Selenium\\WebDrivers\\chromedriver.exe");
+            driver = new ChromeDriver();
+        } else if (browser == BrowserType.IE) {
+            System.setProperty("webdriver.ie.driver","D:\\JavaTest\\Selenium\\WebDrivers\\IEDriverServer.exe");
+            driver = new InternetExplorerDriver();
+        }
         baseUrl = "https://www.katalon.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/group.php");

@@ -23,3 +23,9 @@ _addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactModifi
 ^addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ApplicationManager.java,4\6\46efb033b20cd35cefa6af02316f74c03fbe4a35
 †
 Vaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/HelperBase.java,1\1\1139002e5cd83db4ee92ce65b3358a75f22fce75
+l
+<sandbox/src/test/java/ru/stqa/pft/sandbox/EquationTests.java,6\7\67a6c5db0cdae5af1cedeac7fee05423c95c2b06
+g
+7sandbox/src/main/java/ru/stqa/pft/sandbox/Equation.java,1\b\1b95eb35e8c5bfadca52cce006c5772a095da5b8
+
+Oaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/TestBase.java,6\2\62e28f2e906d5374a0c50fd3ba7ec428a52d0774

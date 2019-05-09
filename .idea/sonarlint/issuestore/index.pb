@@ -11,3 +11,15 @@ C
 sandbox/gradlew,6\2\6212f2988ca8c258e4a1c20259925758654a600c
 R
 "addressbook-web-tests/build.gradle,d\4\d41149839a1b2cdef751b7541034bdb0431670b8
+ç
+]addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupModificationTests.java,e\8\e852fa6337484e106770ac3879def38458293873
+ã
+[addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactDeletionTests.java,7\6\7694accd89f524b040567644b815ff78c750ab0c
+â
+Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ContactHelper.java,a\6\a62f86d61790e2afa3a4a36f13467f16eecc5320
+è
+_addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactModificationTests.java,5\9\598b4ab8ff99354c8d18c51af3bbad5452d444e0
+é
+^addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ApplicationManager.java,4\6\46efb033b20cd35cefa6af02316f74c03fbe4a35
+Ü
+Vaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/HelperBase.java,1\1\1139002e5cd83db4ee92ce65b3358a75f22fce75

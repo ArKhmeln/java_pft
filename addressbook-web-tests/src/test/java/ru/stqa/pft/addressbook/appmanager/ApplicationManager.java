@@ -26,13 +26,13 @@ public class ApplicationManager {
     }
 
     public void init() {
-        if (browser == BrowserType.FIREFOX) {
+        if (browser.equals(BrowserType.FIREFOX)) {
             System.setProperty("webdriver.gecko.driver","D:\\JavaTest\\Selenium\\WebDrivers\\geckodriver.exe");
             driver = new FirefoxDriver();
-        } else if (browser == BrowserType.CHROME) {
+        } else if (browser.equals(BrowserType.CHROME)) {
             System.setProperty("webdriver.chrome.driver","D:\\JavaTest\\Selenium\\WebDrivers\\chromedriver.exe");
             driver = new ChromeDriver();
-        } else if (browser == BrowserType.IE) {
+        } else if (browser.equals(BrowserType.IE)) {
             System.setProperty("webdriver.ie.driver","D:\\JavaTest\\Selenium\\WebDrivers\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
         }

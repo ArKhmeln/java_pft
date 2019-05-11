@@ -38,7 +38,7 @@ public class ApplicationManager {
         }
         baseUrl = "https://www.katalon.com/";
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        driver.get("http://localhost/addressbook/group.php");
+        driver.get("http://localhost/addressbook");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);

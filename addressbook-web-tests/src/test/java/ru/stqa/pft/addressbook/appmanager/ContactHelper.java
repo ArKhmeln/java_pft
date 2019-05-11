@@ -21,7 +21,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("mobile"), contactData.getPhone());
         type(By.name("email"), contactData.getEmail());
-        if (creation) {
+        if (creation) { //проверка, откуда исходит запрос (Creation, Modification)
             new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
@@ -45,7 +45,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification() {
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='asf'])[1]/following::img[2]"));
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Tester'])[1]/following::img[2]"));
     }
 
     public void submitContactModification() {

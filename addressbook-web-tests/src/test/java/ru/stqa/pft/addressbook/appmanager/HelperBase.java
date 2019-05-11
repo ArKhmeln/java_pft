@@ -3,31 +3,31 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.*;
 
 public class HelperBase {
-    protected WebDriver driver;
+    protected WebDriver wd;
     boolean acceptNextAlert = true;
 
-    public HelperBase(WebDriver driver) {
-        this.driver = driver;
+    public HelperBase(WebDriver wd) {
+        this.wd = wd;
     }
 
     protected void click(By locator) {
-        driver.findElement(locator).click();
+        wd.findElement(locator).click();
     }
 
     protected void type(By locator, String text) {
         click(locator);
         if (text != null) {
-            String existingText = driver.findElement(locator).getAttribute("value");
+            String existingText = wd.findElement(locator).getAttribute("value");
             if (!text.equals(existingText)) {
-                driver.findElement(locator).clear();
-                driver.findElement(locator).sendKeys(text);
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(text);
             }
         }
     }
 
     public boolean isElementPresent(By by) {
         try {
-            driver.findElement(by);
+            wd.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
             return false;
@@ -36,7 +36,7 @@ public class HelperBase {
 
     public boolean isAlertPresent() {
         try {
-            driver.switchTo().alert();
+            wd.switchTo().alert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;
@@ -45,7 +45,7 @@ public class HelperBase {
 
     public String closeAlertAndGetItsText() {
         try {
-            Alert alert = driver.switchTo().alert();
+            Alert alert = wd.switchTo().alert();
             String alertText = alert.getText();
             if (acceptNextAlert) {
                 alert.accept();

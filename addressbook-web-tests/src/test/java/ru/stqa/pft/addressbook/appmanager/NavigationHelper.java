@@ -12,7 +12,7 @@ public class NavigationHelper extends HelperBase {
     public void gotoGroupPage() {
         //проверка заголовка "Group"
         if (isElementPresent(By.tagName("h1"))
-                && driver.findElement(By.tagName("h1")).getText().equals("Groups")
+                && wd.findElement(By.tagName("h1")).getText().equals("Groups")
                 && isElementPresent(By.name("new"))) {
             return;
         }

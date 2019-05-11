@@ -27,13 +27,13 @@ public class ApplicationManager {
 
     public void init() {
         if (browser.equals(BrowserType.FIREFOX)) {
-            System.setProperty("webdriver.gecko.driver","D:\\JavaTest\\Selenium\\WebDrivers\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.wd","D:\\JavaTest\\Selenium\\WebDrivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         } else if (browser.equals(BrowserType.CHROME)) {
-            System.setProperty("webdriver.chrome.driver","D:\\JavaTest\\Selenium\\WebDrivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.wd","D:\\JavaTest\\Selenium\\WebDrivers\\chromedriver.exe");
             driver = new ChromeDriver();
         } else if (browser.equals(BrowserType.IE)) {
-            System.setProperty("webdriver.ie.driver","D:\\JavaTest\\Selenium\\WebDrivers\\IEDriverServer.exe");
+            System.setProperty("webdriver.ie.wd","D:\\JavaTest\\Selenium\\WebDrivers\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
         }
         baseUrl = "https://www.katalon.com/";

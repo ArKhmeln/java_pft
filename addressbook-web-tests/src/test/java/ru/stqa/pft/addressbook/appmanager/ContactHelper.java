@@ -22,7 +22,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("mobile"), contactData.getPhone());
         type(By.name("email"), contactData.getEmail());
         if (creation) { //проверка, откуда исходит запрос (Creation, Modification)
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -32,8 +32,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void selectContact() {
-        click(By.id("0"));
+    public void selectContact() {   // приходится менять, всегда разный id
+        click(By.id("11"));
     }
 
     public void deleteSelectedContacts() {
@@ -45,10 +45,27 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification() {
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Tester'])[1]/following::img[2]"));
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='mail@test.com'])[1]/following::img[2]"));
     }
 
     public void submitContactModification() {
         click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]"));
+    }
+
+    private void returnToHomePage() {
+        click(By.linkText("home"));
+    }
+
+    public void createContact(ContactData contact, boolean b) {
+        initContactCreation();
+        fillContactForm(contact, b);
+        submitContactCreation();
+        returnToHomePage();
+    }
+
+
+
+    public boolean isThereContact() {
+        return isElementPresent(By.id("11"));
     }
 }

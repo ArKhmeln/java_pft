@@ -29,3 +29,11 @@ g
 7sandbox/src/main/java/ru/stqa/pft/sandbox/Equation.java,1\b\1b95eb35e8c5bfadca52cce006c5772a095da5b8
 
 Oaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/TestBase.java,6\2\62e28f2e906d5374a0c50fd3ba7ec428a52d0774
+g
+7sandbox/src/main/java/ru/stqa/pft/sandbox/Equality.java,7\3\73259777c19b567aff9a6eea723089678632989d
+‰
+Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java,f\3\f3e320768c8def4c4facc990215881ab06e809a2
+‰
+Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/SessionHelper.java,3\1\31a367f6cf8043283a809bf3f6b31da5e60230a1
+‡
+Waddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/GroupHelper.java,8\c\8c7ed2d864ded7b936a25fb68ce1959e4bc2dbf9

@@ -45,11 +45,11 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification() {
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='mail@test.com'])[1]/following::img[2]"));
+        click(By.cssSelector("img[alt='Edit']"));
     }
 
     public void submitContactModification() {
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]"));
+        click(By.name("update"));
     }
 
     private void returnToHomePage() {
@@ -65,10 +65,10 @@ public class ContactHelper extends HelperBase {
 
 
     public boolean isThereContact() {
-        return isElementPresent(By.id("11"));
+        return isElementPresent(By.name("entry"));
     }
 
     public int getContactCount() {
-        return wd.findElements(By.name("selected[]")).size();
+        return wd.findElements(By.name("entry")).size();
     }
 }

@@ -1,0 +1,8 @@
+
+Gsquid:S1481
+"*Remove this unused "langs" local variable.(˜¬´I8ãýŠÈª-
+Vsquid:S1854
+"9Remove this useless assignment to local variable "langs".(˜¬´I8ãýŠÈª-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(Õ‡ß¿8ÑÎîÇª-
+[squid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8çÚ‘Èª-

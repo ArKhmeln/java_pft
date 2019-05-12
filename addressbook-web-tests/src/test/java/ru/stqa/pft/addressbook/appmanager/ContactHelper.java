@@ -17,7 +17,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"),contactData.getFirstname());
+        type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("mobile"), contactData.getPhone());
         type(By.name("email"), contactData.getEmail());
@@ -64,8 +64,11 @@ public class ContactHelper extends HelperBase {
     }
 
 
-
     public boolean isThereContact() {
         return isElementPresent(By.id("11"));
+    }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
     }
 }

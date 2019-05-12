@@ -10,7 +10,7 @@ public class GroupModificationTests extends TestBase {
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
         int before = app.getGroupHelper().getGroupCount();
-        if (! app.getGroupHelper().isThereGroup()) {
+        if (!app.getGroupHelper().isThereGroup()) {
             app.getGroupHelper().createGroup(new GroupData("test1", "null", "null"));
         }
         app.getGroupHelper().selectGroup();

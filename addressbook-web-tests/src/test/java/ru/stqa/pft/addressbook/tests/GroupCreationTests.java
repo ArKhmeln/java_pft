@@ -17,7 +17,7 @@ public class GroupCreationTests extends TestBase {
         GroupData group = new GroupData("test2", "null", "null");
         app.getGroupHelper().createGroup(group);
         List<GroupData> after = app.getGroupHelper().getGroupList();
-        Assert.assertEquals(after.size(), before.size() + 1);
+        Assert.assertEquals(after.size(), before.size() + 1); //кол-во групп до должно быть = кол-ву гр. после
 
         //как найти идентификатор новой группы? В новой группе id максимальный, сравниваем друг с другом
         //список в поток, ф-я для мах эл-та (сравн. объекты GroupDara с пом. сравнения их Id). на выходе мах объект

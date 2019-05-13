@@ -37,6 +37,7 @@ public class ApplicationManager {
             driver = new InternetExplorerDriver();
         }
         baseUrl = "https://www.katalon.com/";
+        //иплицитное ожидание. (например, драйвер жёт, не появятся ли элементы в течение time)
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook");
         groupHelper = new GroupHelper(driver);

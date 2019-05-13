@@ -47,3 +47,5 @@ j
 :sandbox/src/main/java/ru/stqa/pft/sandbox/Collections.java,8\a\8aa26e625b6cb9e1a8aef4e94b3ba7ecf1d1916e
 ‰
 Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupDeletionTests.java,5\a\5aba0ab9510127d189f650ee712c82a96bd75408
+€
+Paddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/GroupData.java,a\6\a6eeb5be739719336a52fb834891e2bf911bdd5d

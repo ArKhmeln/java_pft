@@ -49,3 +49,5 @@ j
 Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupDeletionTests.java,5\a\5aba0ab9510127d189f650ee712c82a96bd75408
 €
 Paddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/GroupData.java,a\6\a6eeb5be739719336a52fb834891e2bf911bdd5d
+‚
+Raddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/ContactData.java,7\a\7ace2f9247e981d7cbd2606900b8c2f00a4b2ce6

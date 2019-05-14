@@ -37,8 +37,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void selectContact() {   // приходится менять, всегда разный id
-        click(By.id("11"));
+    public void selectContact(int index) {   // приходится менять, всегда разный id; upd уже норм
+        wd.findElements(By.name("selected[]")).get(index).click();;
     }
 
     public void deleteSelectedContacts() {
@@ -80,10 +80,10 @@ public class ContactHelper extends HelperBase {
 
     public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<>();
-        List<WebElement> elements = wd.findElements(By.name("selected[]"));   //найти эл-ты: тег td, класс center
+        List<WebElement> elements = wd.findElements(By.name("selected[]"));   //найти эл-ты
         for (WebElement element: elements) {
             String name = element.getText();
-            ContactData contact = new ContactData(name, null, null, null, null);
+            ContactData contact = new ContactData(name, name, null, null, null);
             contacts.add(contact);
         }
         return contacts;

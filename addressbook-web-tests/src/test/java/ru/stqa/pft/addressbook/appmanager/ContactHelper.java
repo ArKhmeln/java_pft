@@ -82,9 +82,9 @@ public class ContactHelper extends HelperBase {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement element: elements) {
-            String name = element.findElement(By.tagName("input")).getAttribute("title");
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));    //методом тыка сделано
-            ContactData contact = new ContactData(id, name, null, null, null, null);
+            String name = element.getText();
+            String id = element.findElement(By.tagName("input")).getAttribute("id");    //методом тыка сделано
+            ContactData contact = new ContactData(id, name, name, null, null, null);
             contacts.add(contact);
         }
         return contacts;

@@ -16,7 +16,7 @@ public class ContactDeletionTests extends TestBase {
                     "1234", "mail@test.com", "test1"), true);
         }
         List<ContactData> before = app.getContactHelper().getContactList();
-        app.getContactHelper().selectContact(before.size() - 1);    //м.б. ошибка - тогда поставить 0
+        app.getContactHelper().selectContact(0);
         app.getContactHelper().deleteSelectedContacts();
         app.getContactHelper().confirmDeletionContacts();
         app.getNavigationHelper().gotoHomePage();

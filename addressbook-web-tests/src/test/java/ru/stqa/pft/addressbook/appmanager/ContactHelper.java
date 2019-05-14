@@ -80,10 +80,11 @@ public class ContactHelper extends HelperBase {
 
     public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<>();
-        List<WebElement> elements = wd.findElements(By.name("selected[]"));   //найти эл-ты
+        List<WebElement> elements = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement element: elements) {
             String name = element.getText();
-            ContactData contact = new ContactData(name, name, null, null, null);
+            String id = element.findElement(By.tagName("input")).getAttribute("id");    //методом тыка сделано
+            ContactData contact = new ContactData(id, name, name, null, null, null);
             contacts.add(contact);
         }
         return contacts;

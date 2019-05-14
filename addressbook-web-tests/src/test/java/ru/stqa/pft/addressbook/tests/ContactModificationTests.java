@@ -18,12 +18,16 @@ public class ContactModificationTests extends TestBase {
         }
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactModification();
-        app.getContactHelper().fillContactForm(new ContactData("Tester", "Auto",
-                "1234", "mail@test.com", null), false);
+        ContactData contact = new ContactData("Tester", "Auto",
+                "1234", "mail@test.com", null);
+        app.getContactHelper().fillContactForm(contact, false);
         app.getContactHelper().submitContactModification();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(), before.size());
 
+        //модификация не работает в адресбуке, не проверить код
+        before.remove(0);
+        before.add(contact);
         Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
     }
 }

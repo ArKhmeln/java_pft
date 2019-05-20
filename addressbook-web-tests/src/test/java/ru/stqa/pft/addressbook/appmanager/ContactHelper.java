@@ -49,11 +49,11 @@ public class ContactHelper extends HelperBase {
         closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$");
     }
 
-    public void initContactModification() {
+    public void initModification() {
         click(By.cssSelector("img[alt='Edit']"));
     }
 
-    public void submitContactModification() {
+    public void submitModification() {
         click(By.name("update"));
         returnToHomePage();
     }
@@ -62,13 +62,18 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-    public void createContact(ContactData contact, boolean b) {
+    public void create(ContactData contact, boolean b) {
         initContactCreation();
         fillContactForm(contact, b);
         submitContactCreation();
         returnToHomePage();
     }
 
+    public void delete() {
+        selectContact(0);    //м.б. ошибка - тогда поставить 0
+        deleteSelectedContacts();
+        confirmDeletionContacts();
+    }
 
     public boolean isThereContact() {
         return isElementPresent(By.name("entry"));
@@ -79,7 +84,7 @@ public class ContactHelper extends HelperBase {
     }
 
     //доработать!
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement element: elements) {

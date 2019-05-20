@@ -6,29 +6,28 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class ContactModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.getNavigationHelper().gotoHomePage();
-        if (!app.getContactHelper().isThereContact()) {
-            app.getContactHelper().createContact(new ContactData("Tester", "Auto",
+        app.goTo().gotoHomePage();
+        if (app.contact().list().size() == 0) {
+            app.contact().create(new ContactData("Tester", "Auto",
                     "1234", "mail@test.com", "test1"), true);
         }
     }
 
     @Test(enabled = false)
     public void testContactModification() {
-        List<ContactData> before = app.getContactHelper().getContactList();
-        app.getContactHelper().initContactModification();
+        List<ContactData> before = app.contact().list();
+        app.contact().initModification();
         ContactData contact = new ContactData("Tester", "Auto",
                 "1234", "mail@test.com", null);
-        app.getContactHelper().fillContactForm(contact, false);
-        app.getContactHelper().submitContactModification();
-        List<ContactData> after = app.getContactHelper().getContactList();
+        app.contact().fillContactForm(contact, false);
+        app.contact().submitModification();
+        List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size());
 
         //модификация не работает в адресбуке, не проверить код

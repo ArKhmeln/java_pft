@@ -83,9 +83,10 @@ public class ContactHelper extends HelperBase {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement element: elements) {
-            String name = element.findElement(By.tagName("input")).getAttribute("title");
+            String firstname = element.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(3)")).getText();
+            String lastname = element.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(2)")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));    //методом тыка сделано
-            ContactData contact = new ContactData(id, name, null, null, null, null);
+            ContactData contact = new ContactData(id, firstname, lastname, null, null, null);
             contacts.add(contact);
         }
         return contacts;

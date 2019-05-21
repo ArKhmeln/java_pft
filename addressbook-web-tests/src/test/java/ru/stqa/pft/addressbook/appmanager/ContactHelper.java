@@ -26,7 +26,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("mobile"), contactData.getPhone());
         type(By.name("email"), contactData.getEmail());
-        if (creation) { //проверка, откуда исходит запрос (Creation, Modification)
+        if (creation) {     //проверка, откуда исходит запрос (Creation, Modification)
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
@@ -91,8 +91,7 @@ public class ContactHelper extends HelperBase {
             String firstname = element.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(3)")).getText();
             String lastname = element.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(2)")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));    //методом тыка сделано
-            ContactData contact = new ContactData(id, firstname, lastname, null, null, null);
-            contacts.add(contact);
+            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
         return contacts;
     }

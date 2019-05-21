@@ -9,12 +9,12 @@ import java.util.List;
 
 public class ContactCreationTests extends TestBase {
 
-    @Test(enabled = false)
+    @Test
     public void testContactCreation() {
         app.goTo().gotoHomePage();
         List<ContactData> before = app.contact().list();
-        ContactData contact = new ContactData("Tester", "Auto",
-                "1234", "mail@test.com", "test1");
+        ContactData contact = new ContactData().withFirstname("Tester")
+                .withLastname("Auto").withPhone("1234").withEmail("mail@test.com").withGroup("test1");
         app.contact().create(contact, true);
         List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size() + 1);

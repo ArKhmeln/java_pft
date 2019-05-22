@@ -69,7 +69,7 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void modifyContact(ContactData contact) {
+    public void modify(ContactData contact) {
         initModification();
         fillContactForm(contact, false);
         submitModification();

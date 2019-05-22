@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -37,8 +37,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void selectContact(int index) {   // приходится менять, всегда разный id; upd уже норм
-        wd.findElements(By.name("selected[]")).get(index).click();;
+    public void selectContactById(int id) {   // приходится менять, всегда разный id; upd уже норм
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();;
     }
 
     public void deleteSelectedContacts() {
@@ -76,8 +76,8 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void delete() {
-        selectContact(0);    //м.б. ошибка - тогда поставить 0
+    public void delete(ContactData contact) {
+        selectContactById(contact.getId());
         deleteSelectedContacts();
         confirmDeletionContacts();
     }
@@ -90,9 +90,8 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("entry")).size();
     }
 
-    //доработать!
-    public List<ContactData> list() {
-        List<ContactData> contacts = new ArrayList<>();
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<>();
         List<WebElement> elements = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement element: elements) {
             String firstname = element.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(3)")).getText();

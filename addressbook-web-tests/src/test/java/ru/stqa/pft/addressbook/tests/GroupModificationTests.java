@@ -30,7 +30,7 @@ public class GroupModificationTests extends TestBase {
         GroupData modifiedGroup = before.iterator().next();  //какую группу удалять
         GroupData group = new GroupData()
                 .withId(modifiedGroup.getId()).withName("test1").withHeader("test2").withFooter("test3");
-        app.group().modify(group);
+        app.group().modify(group);  //объект последовательно модифицируется, шаблон Builder
         Groups after = app.group().all();
         assertEquals(after.size(), before.size());
         assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));

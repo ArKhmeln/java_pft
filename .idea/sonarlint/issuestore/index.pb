@@ -51,3 +51,5 @@ Yaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupDeletion
 Paddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/GroupData.java,a\6\a6eeb5be739719336a52fb834891e2bf911bdd5d
 ‚
 Raddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/ContactData.java,7\a\7ace2f9247e981d7cbd2606900b8c2f00a4b2ce6
+}
+Maddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/Groups.java,4\9\4950764af21366b99226e1782fd8f10ee85e9064

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ContactModificationTests extends TestBase {
 
-    @BeforeMethod
+    @BeforeMethod   //так код более понятный
     public void ensurePreconditions() {
         app.goTo().gotoHomePage();
         if (app.contact().list().size() == 0) {
@@ -19,14 +19,12 @@ public class ContactModificationTests extends TestBase {
         }
     }
 
-    @Test(enabled = false)
+    @Test
     public void testContactModification() {
         List<ContactData> before = app.contact().list();
-        app.contact().initModification();
         ContactData contact = new ContactData().withFirstname("Tester")
                 .withLastname("Auto").withPhone("1234").withEmail("mail@test.com");
-        app.contact().fillContactForm(contact, false);
-        app.contact().submitModification();
+        app.contact().modifyContact(contact);
         List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size());
 

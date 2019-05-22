@@ -18,7 +18,7 @@ public class ContactDeletionTests extends TestBase {
         }
     }
 
-    @Test(enabled = false)
+    @Test
     public void testContactDeletion() {
         List<ContactData> before = app.contact().list();
         app.contact().delete();

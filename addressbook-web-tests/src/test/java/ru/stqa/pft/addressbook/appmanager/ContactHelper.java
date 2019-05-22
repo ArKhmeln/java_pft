@@ -69,6 +69,13 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
+    public void modifyContact(ContactData contact) {
+        initModification();
+        fillContactForm(contact, false);
+        submitModification();
+        returnToHomePage();
+    }
+
     public void delete() {
         selectContact(0);    //м.б. ошибка - тогда поставить 0
         deleteSelectedContacts();

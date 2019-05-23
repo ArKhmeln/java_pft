@@ -5,6 +5,7 @@ import com.google.common.collect.ForwardingSet;
 import java.util.HashSet;
 import java.util.Set;
 
+//класс, который ведет себя как Set, но со своими методами
 public class Groups extends ForwardingSet<GroupData> {
 
     private Set<GroupData> deligate;
@@ -14,7 +15,7 @@ public class Groups extends ForwardingSet<GroupData> {
     }
 
     public Groups() {
-        this.deligate = new HashSet<GroupData>();
+        this.deligate = new HashSet<>();
     }
 
     @Override
@@ -30,7 +31,7 @@ public class Groups extends ForwardingSet<GroupData> {
 
     public Groups without(GroupData group) {  //делает копию, из которой удалена группа
         Groups groups = new Groups(this);
-        groups.remove(group);  //add работает т.к. реализован в ForwardingSet
+        groups.remove(group);
         return groups;
     }
 }

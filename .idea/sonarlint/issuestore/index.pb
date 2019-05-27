@@ -55,3 +55,5 @@ Raddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/ContactData.j
 Maddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/Groups.java,4\9\4950764af21366b99226e1782fd8f10ee85e9064
 
 Oaddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/Contacts.java,1\7\1752541f06c63eaac2644aec5a1daaeadde84666
+‡
+Waddressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactPhoneTest.java,2\a\2abcc0c491de465a0558296c1ca6dbe3d05de642

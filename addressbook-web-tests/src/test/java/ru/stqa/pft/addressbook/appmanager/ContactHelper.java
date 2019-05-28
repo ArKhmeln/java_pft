@@ -98,15 +98,15 @@ public class ContactHelper extends HelperBase {
         List<WebElement> rows = wd.findElements(By.name("entry"));   //найти эл-ты
         for (WebElement row: rows) {
             List<WebElement> cells = row.findElements(By.tagName("td"));
+            int id = Integer.parseInt(rows.get(0).findElement(By.tagName("input")).getAttribute("value"));
             //можно было findElement(By.name("firstname")).getAttribute("value");
             String firstname = row.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(3)")).getText();
             String lastname = row.findElement(By.cssSelector("tr[name=entry] td:nth-of-type(2)")).getText();
             String allPhones = cells.get(5).getText();
             //String[] phones =  cells.get(5).getText().split("\n");  //порезать, чтобы оказались 3 телефона
-            String[] emails = cells.get(4).getText().split("\n");
-            int id = Integer.parseInt(rows.get(0).findElement(By.tagName("input")).getAttribute("value"));
+            String allEmails = cells.get(4).getText();
             contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAllPhones(allPhones).withEmail(emails[0]).withEmail2(emails[1]).withEmail3(emails[2]));
+                    .withAllPhones(allPhones).withAllEmails(allEmails));
         }
         return contacts;
     }

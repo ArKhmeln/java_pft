@@ -49,7 +49,7 @@ public class ContactPhoneTest extends TestBase {
 
     //для удаления ненужных символов (символы стираются при показе в меню контактов
     public static String cleaned(String phone) {
-        return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
+        return phone.replaceAll("\\s", "").replaceAll("[-()]", "");//\\s-пробельн.сим
 
     }
 }
